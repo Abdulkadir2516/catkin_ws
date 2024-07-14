@@ -1,17 +1,20 @@
 import random
 sayac = 0
-for i in range(-150,-49,10):
-    for j in range(-150, -49,10):
 
-        bush_type = random.randint(1, 9)
+bush_names =["bush_0","bush_1","bush_2","bush_3","bush_4","bush_5","bush_6"] 
 
-        if bush_type in [5,6]:
+for i in range(50,150,10):
+    for j in range(50, 150,10):
+
+        bush_type = random.randint(1, 6)
+
+        if bush_type in [7,6]:
             continue
         
-        print(f'    <model name="tree_{sayac}">')
+        print(f'    <model name="bush_{sayac}">')
         print(f'      <pose>{i} {j} 0 0 0 0</pose>')
         print(f'      <include>')
-        print(f'        <uri>model://tree_{bush_type}</uri>')
+        print(f'        <uri>model://bush_{bush_type}</uri>')
         print(f'      </include>')
         print(f'    </model>')
 
@@ -19,9 +22,9 @@ for i in range(-150,-49,10):
         sayac +=1
 
 
-for i in range(-150,-49,10):
-    for j in range(-150, -49,10):
-        print(-50,-150,5)
+for i in range(50,150,10):
+    for j in range(50, 150,10):
+        print(f"({i},{j},5)")
 
 
 
