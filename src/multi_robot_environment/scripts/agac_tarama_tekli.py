@@ -35,7 +35,7 @@ def takeoff(irtifa, iha):
         print("İha hedefe yükseliyor.")
         time.sleep(1)
 
-takeoff(40,iha1)
+takeoff(30,iha1)
 
 class DroneNavigator:
     def __init__(self):
@@ -77,7 +77,7 @@ class DroneNavigator:
         ]
         self.waypoint_index = 0
 
-        self.rate = rospy.Rate(3)  # 20 Hz
+        self.rate = rospy.Rate(1)  # 20 Hz
 
     def state_callback(self, state):
         self.current_state = state

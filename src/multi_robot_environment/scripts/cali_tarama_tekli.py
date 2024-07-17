@@ -11,7 +11,7 @@ import time
 import threading
 
 iha1 = connect("127.0.0.1:14550", wait_ready=True)
-
+"""
 def takeoff(irtifa, iha):
     while iha.is_armable is not True:
         print("İHA arm edilebilir durumda değil.")
@@ -35,7 +35,7 @@ def takeoff(irtifa, iha):
         print("İha hedefe yükseliyor.")
         time.sleep(1)
 
-takeoff(10,iha1)
+takeoff(10,iha1)"""
 
 class DroneNavigator:
     def __init__(self):
@@ -77,7 +77,7 @@ class DroneNavigator:
         ]
         self.waypoint_index = 0
 
-        self.rate = rospy.Rate(3)  # 20 Hz
+        self.rate = rospy.Rate(1)  # 20 Hz
 
     def state_callback(self, state):
         self.current_state = state

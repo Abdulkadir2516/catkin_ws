@@ -37,11 +37,11 @@ def process(src):
 
     hsvFrame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGR2HSV)
 
-    lower_black = np.array([0, 0, 0])
-    upper_black = np.array([180, 255, 50])
+    lower_line = np.array([4,162,134])
+    upper_line = np.array([24,242,214])
 
     # Maskenizi tanımlayın
-    mask = cv2.inRange(hsvFrame, lower_black, upper_black)
+    mask = cv2.inRange(hsvFrame, lower_line, upper_line)
 
     # Maske üzerinden görüntüyü filtrele
     result = cv2.bitwise_and(frame, frame, mask=mask)
