@@ -12,7 +12,9 @@ import numpy as np
 import rospy
 from sensor_msgs.msg import NavSatFix
 from message_filters import Subscriber, ApproximateTimeSynchronizer
-
+from geometry_msgs.msg import PoseStamped
+from mavros_msgs.msg import State
+import kontrol
 
 bridge = CvBridge()
 
@@ -34,19 +36,25 @@ def process_images():
         
         cv2.waitKey(3)
 
-def konum_callback(gps1_data):
-    rospy.loginfo("Drone 1 GPS: Latitude: %f, Longitude: %f, Altitude: %f",
-                  gps1_data.latitude, gps1_data.longitude, gps1_data.altitude)
+def konum_callback(state_sub,pose_sub,local_pos_pub):
+    rospy.loginfo(state_sub, "  ", pose_sub, "  ", local_pos_pub)
+
+
+
+konumlar = []
+konumlar.append((1000,1000,1000))
+def pose_callback(pose):
+    #print("x:{} \ny:{} \nz:{}".format(pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
+    global konumlar
+
+    if(konumlar[-1][0] - float(pose.pose.position.x) < 2 or konumlar[-1][1] - float(pose.pose.position.y) < 2 or konumlar[-1][2] - float(pose.pose.position.z) < 2 ):
+        konumlar.append((pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
+    else:
+        konumlar.append((1000,1000,1000))
+        konumlar.append((pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
+
     
-def listener():
-    rospy.init_node('gps_listener', anonymous=True)
 
-    gps1_sub = Subscriber('/drone1/mavros/global_position/global', NavSatFix)
-
-    ts = ApproximateTimeSynchronizer([gps1_sub], queue_size=10, slop=0.1)
-    ts.registerCallback(konum_callback)
-
-    rospy.spin()
 
 def process(src):
         # Ekranın bir resmini al ve BGR renk uzayına dönüştür
@@ -80,17 +88,23 @@ def process(src):
 
             imageFrame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             
-            #listener()
+            # Drone'un durumu ve pozisyonu için abonelikler
+            pose_sub = rospy.Subscriber('/drone1/mavros/local_position/pose', PoseStamped, pose_callback)
+            print(konumlar[-1])
+            # Son elemanı al
+            son_eleman = konumlar[-1]
+
+            # Metin belgesine yaz
+            with open("konumlar.txt", "a") as dosya:
+                if son_eleman == (1000,1000,1000):
+                    dosya.write("\n")
+                else:
+                    dosya.write(str(son_eleman) + ",")
+
             
-            #rospy.init_node('gps_listener', anonymous=True)
-            gps1_sub = Subscriber('/drone1/mavros/global_position/global', NavSatFix)
-            ts = ApproximateTimeSynchronizer([gps1_sub], queue_size=10, slop=0.1)
-            ts.registerCallback(konum_callback)
-
-
 
             return imageFrame
-
+        
     return frame
 
     cv2.imshow("ekran", result)

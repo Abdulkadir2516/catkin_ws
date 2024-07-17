@@ -103,7 +103,6 @@ class DroneNavigator:
                 current_waypoint = self.waypoints[self.waypoint_index]
                 self.set_target_pose(*current_waypoint)
                 self.local_pos_pub.publish(self.target_pose)
-
                 if self.distance_to_target() < 0.5:  # Hedefe yakınlık kontrolü
                     rospy.loginfo("Reached waypoint %d", self.waypoint_index + 1)
                     self.waypoint_index += 1

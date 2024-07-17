@@ -33,7 +33,7 @@ def takeoff(irtifa, iha):
 takeoff_threads = []
 
 for iha in [iha1, iha2, iha3]:#
-    takeoff_thread = threading.Thread(target=takeoff, args=(2, iha))
+    takeoff_thread = threading.Thread(target=takeoff, args=(10, iha))
     takeoff_threads.append(takeoff_thread)
     
 # Kalkış thread'lerini başlat
