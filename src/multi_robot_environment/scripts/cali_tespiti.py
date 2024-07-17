@@ -9,6 +9,11 @@ import threading
 from queue import Queue  # Python 2'de 'queue' yerine 'Queue' kullanılır
 import numpy as np
 
+import rospy
+from sensor_msgs.msg import NavSatFix
+from message_filters import Subscriber, ApproximateTimeSynchronizer
+
+
 bridge = CvBridge()
 
 # Her drone için görüntü kuyruğu
@@ -28,6 +33,20 @@ def process_images():
             cv2.imshow("Drone 1 Image Window", process(cv_image))
         
         cv2.waitKey(3)
+
+def konum_callback(gps1_data):
+    rospy.loginfo("Drone 1 GPS: Latitude: %f, Longitude: %f, Altitude: %f",
+                  gps1_data.latitude, gps1_data.longitude, gps1_data.altitude)
+    
+def listener():
+    rospy.init_node('gps_listener', anonymous=True)
+
+    gps1_sub = Subscriber('/drone1/mavros/global_position/global', NavSatFix)
+
+    ts = ApproximateTimeSynchronizer([gps1_sub], queue_size=10, slop=0.1)
+    ts.registerCallback(konum_callback)
+
+    rospy.spin()
 
 def process(src):
         # Ekranın bir resmini al ve BGR renk uzayına dönüştür
@@ -61,6 +80,15 @@ def process(src):
 
             imageFrame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             
+            #listener()
+            
+            #rospy.init_node('gps_listener', anonymous=True)
+            gps1_sub = Subscriber('/drone1/mavros/global_position/global', NavSatFix)
+            ts = ApproximateTimeSynchronizer([gps1_sub], queue_size=10, slop=0.1)
+            ts.registerCallback(konum_callback)
+
+
+
             return imageFrame
 
     return frame

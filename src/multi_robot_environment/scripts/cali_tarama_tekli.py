@@ -11,8 +11,8 @@ import time
 import threading
 
 iha1 = connect("127.0.0.1:14550", wait_ready=True)
-"""
-def takeoff(irtifa, iha):
+
+"""def takeoff(irtifa, iha):
     while iha.is_armable is not True:
         print("İHA arm edilebilir durumda değil.")
         time.sleep(1)

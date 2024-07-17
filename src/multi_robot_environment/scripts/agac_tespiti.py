@@ -37,15 +37,15 @@ def process(src):
 
     hsvFrame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGR2HSV)
 
-    lower_line = np.array([4,162,134])
-    upper_line = np.array([24,242,214])
+    lower_line = np.array([4,50,50])
+    upper_line = np.array([24,255,255])
 
     # Maskenizi tanımlayın
     mask = cv2.inRange(hsvFrame, lower_line, upper_line)
 
     # Maske üzerinden görüntüyü filtrele
     result = cv2.bitwise_and(frame, frame, mask=mask)
-
+    
 
     kernel = np.ones((5, 5), "uint8")
 
@@ -56,7 +56,7 @@ def process(src):
 
     for pic, contour in enumerate(contours):
         area = cv2.contourArea(contour)
-        if area > 2000:
+        if area > 1200:
             x, y, w, h = cv2.boundingRect(contour)
 
             imageFrame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
