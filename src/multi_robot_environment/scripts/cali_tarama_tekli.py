@@ -1,43 +1,20 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 import rospy
 from geometry_msgs.msg import PoseStamped
 from mavros_msgs.msg import State
 from mavros_msgs.srv import CommandBool, SetMode
 import math
-
+from std_msgs.msg import String
 from dronekit import connect, VehicleMode, LocationGlobalRelative
 import time
 import threading
 
 iha1 = connect("127.0.0.1:14550", wait_ready=True)
 
-"""def takeoff(irtifa, iha):
-    while iha.is_armable is not True:
-        print("İHA arm edilebilir durumda değil.")
-        time.sleep(1)
-
-    print("İHA arm edilebilir.")
-
-    iha.mode = VehicleMode("GUIDED")
-
-    iha.armed = True
-
-    while iha.armed is not True:
-        print("İHA arm ediliyor...")
-        time.sleep(0.5)
-
-    print("İHA arm edildi.")
-
-    iha.simple_takeoff(irtifa)
-    
-    while iha.location.global_relative_frame.alt < irtifa * 0.9:
-        print("İha hedefe yükseliyor.")
-        time.sleep(1)
-
-takeoff(10,iha1)"""
-
 class DroneNavigator:
+
     def __init__(self):
         rospy.init_node('drone_navigator')
 
@@ -49,35 +26,14 @@ class DroneNavigator:
         self.current_state = State()
         self.current_pose = PoseStamped()
         self.target_pose = PoseStamped()
-
         # Hedef noktalar (x, y, z) formatında
-        self.waypoints = [  
-                (-50,50,7),
-                (-50,150,7),
-                (-60,150,7),
-                (-60,50,7),
-                (-70,50,7),
-                (-70,150,7),
-                (-80,150,7),
-                (-80,50,7),
-                (-90,50,7),
-                (-90,150,7),
-                (-100,150,7),
-                (-100,50,7),
-                (-110,50,7),
-                (-110,150,7),
-                (-120,150,7),
-                (-120,50,7),
-                (-130,50,7),
-                (-130,150,7),
-                (-140,150,7),
-                (-140,50,7),
-                (-150,50,7),
-                (-150,150,7)
+        self.waypoints = [
+            (-60, 150, 7),
+            (-60, 50, 7)
         ]
+        
         self.waypoint_index = 0
-
-        self.rate = rospy.Rate(1)  # 20 Hz
+        self.rate = rospy.Rate(1)  # 1 Hz
 
     def state_callback(self, state):
         self.current_state = state
@@ -108,10 +64,14 @@ class DroneNavigator:
                     self.waypoint_index += 1
             else:
                 rospy.loginfo("All waypoints reached")
-                break
+                pub = rospy.Publisher('/drone1/bitti', String, queue_size=10)
+                rospy.loginfo("bitti")
+                pub.publish("bitti")
+                
 
             self.rate.sleep()
-
+                
+    
 if __name__ == '__main__':
     navigator = DroneNavigator()
     navigator.navigate()

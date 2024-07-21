@@ -6,15 +6,16 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
 import threading
-from queue import Queue  # Python 2'de 'queue' yerine 'Queue' kullanılır
+from queue import Queue 
 import numpy as np
+from std_msgs.msg import String
 
 import rospy
 from sensor_msgs.msg import NavSatFix
 from message_filters import Subscriber, ApproximateTimeSynchronizer
 from geometry_msgs.msg import PoseStamped
 from mavros_msgs.msg import State
-import kontrol
+
 
 bridge = CvBridge()
 
@@ -33,6 +34,8 @@ def process_images():
         if not image_queue_1.empty():
             cv_image = image_queue_1.get()
             cv2.imshow("Drone 1 Image Window", process(cv_image))
+
+
         
         cv2.waitKey(3)
 
@@ -40,27 +43,23 @@ def konum_callback(state_sub,pose_sub,local_pos_pub):
     rospy.loginfo(state_sub, "  ", pose_sub, "  ", local_pos_pub)
 
 
-
-konumlar = []
-konumlar.append((1000,1000,1000))
 def pose_callback(pose):
     #print("x:{} \ny:{} \nz:{}".format(pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
-    global konumlar
-
-    if(konumlar[-1][0] - float(pose.pose.position.x) < 2 or konumlar[-1][1] - float(pose.pose.position.y) < 2 or konumlar[-1][2] - float(pose.pose.position.z) < 2 ):
-        konumlar.append((pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
-    else:
-        konumlar.append((1000,1000,1000))
-        konumlar.append((pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
+    
+    """pub = rospy.Publisher('cali_konumları', PoseStamped, queue_size=10)
+    pub.publish(pose)"""
 
     
+def bitti(data):
+    print("naber")
+    cv2.destroyAllWindows()
+    rospy.on_shutdown()
 
 
 def process(src):
         # Ekranın bir resmini al ve BGR renk uzayına dönüştür
     frame = np.array(src)
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
 
     hsvFrame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGR2HSV)
 
@@ -90,26 +89,13 @@ def process(src):
             
             # Drone'un durumu ve pozisyonu için abonelikler
             pose_sub = rospy.Subscriber('/drone1/mavros/local_position/pose', PoseStamped, pose_callback)
-            print(konumlar[-1])
-            # Son elemanı al
-            son_eleman = konumlar[-1]
-
-            # Metin belgesine yaz
-            with open("konumlar.txt", "a") as dosya:
-                if son_eleman == (1000,1000,1000):
-                    dosya.write("\n")
-                else:
-                    dosya.write(str(son_eleman) + ",")
-
+            bittimi = rospy.Subscriber('/drone1/bitti', String, bitti)
             
-
             return imageFrame
         
     return frame
 
-    cv2.imshow("ekran", result)
-    if cv2.waitKey(10) & 0xFF == ord('q'):
-        cv2.destroyAllWindows()
+    
         
 
 def main():
