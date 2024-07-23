@@ -1,8 +1,15 @@
 import random
+
+# Metin belgesini oluşturma ve içine "Hello World" yazma
+with open('hello_world.txt', 'w') as file:
+    file.write('Hello World')
+
+print("Metin belgesi oluşturuldu ve 'Hello World' yazıldı.")
+
 sayac = 0
 
 bush_names =["bush_0","bush_1","bush_2","bush_3","bush_4","bush_5","bush_6"] 
-
+exit()
 for i in range(50,150,10):
     for j in range(50, 150,10):
 

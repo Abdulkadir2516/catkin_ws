@@ -28,7 +28,7 @@ class DroneNavigator:
         self.target_pose = PoseStamped()
         # Hedef noktalar (x, y, z) formatında
         self.waypoints = [
-            (-60, 150, 7),
+            (-140, 50, 7),
             (-60, 50, 7)
         ]
         
@@ -67,6 +67,9 @@ class DroneNavigator:
                 pub = rospy.Publisher('/drone1/bitti', String, queue_size=10)
                 rospy.loginfo("bitti")
                 pub.publish("bitti")
+
+                
+                
                 
 
             self.rate.sleep()

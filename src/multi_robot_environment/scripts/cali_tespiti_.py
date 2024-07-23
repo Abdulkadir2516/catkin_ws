@@ -2,19 +2,16 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, NavSatFix
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
 import threading
 from queue import Queue 
 import numpy as np
 from std_msgs.msg import String
-
-import rospy
-from sensor_msgs.msg import NavSatFix
-from message_filters import Subscriber, ApproximateTimeSynchronizer
 from geometry_msgs.msg import PoseStamped
 from mavros_msgs.msg import State
+from message_filters import Subscriber, ApproximateTimeSynchronizer
 
 kontrol = False
 koordinatlar = []
@@ -37,7 +34,6 @@ def koordinatlari_gonder():
     for i in range(len(koordinatlar)-1):
         if(float(koordinatlar[i][0]) - float(koordinatlar[i+1][0]) > 5 or float(koordinatlar[i][1]) - float(koordinatlar[i+1][1]) > 5):
             print(koordinatlar[i])
-    
 
 def process_images():
     while not rospy.is_shutdown():
@@ -50,26 +46,18 @@ def process_images():
                 rospy.signal_shutdown("İşimiz bitti")
         cv2.waitKey(3)
 
-
-
-def konum_callback(state_sub,pose_sub,local_pos_pub):
-    rospy.loginfo(state_sub, "  ", pose_sub, "  ", local_pos_pub)
-
-import time
 def pose_callback(pose):
     global koordinatlar
-    print("x:{} \ny:{} \nz:{}".format(pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
-    koordinatlar.append((pose.pose.position.x,pose.pose.position.y,pose.pose.position.z))
-"""
-    pub = rospy.Publisher('cali_konumlari', PoseStamped, queue_size=10)
-    pub.publish(pose)"""
+    koordinatlar.append((pose.pose.position.x, pose.pose.position.y, pose.pose.position.z))
+    print("x:{} \ny:{} \nz:{}".format(pose.pose.position.x, pose.pose.position.y, pose.pose.position.z))
 
 def bitti(data):
     global kontrol
     kontrol = True
 
 def process(src):
-        # Ekranın bir resmini al ve BGR renk uzayına dönüştür
+    global koordinatlar
+    # Ekranın bir resmini al ve BGR renk uzayına dönüştür
     frame = np.array(src)
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
@@ -84,32 +72,33 @@ def process(src):
     # Maske üzerinden görüntüyü filtrele
     result = cv2.bitwise_and(frame, frame, mask=mask)
 
-
     kernel = np.ones((5, 5), "uint8")
 
     mask = cv2.dilate(mask, kernel)
 
-    # contur oluşturma ve renk takibi
-    _, contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    # Contur oluşturma ve renk takibi
+    contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-    for pic, contour in enumerate(contours):
+    for contour in contours:
         area = cv2.contourArea(contour)
         if area > 2000:
             x, y, w, h = cv2.boundingRect(contour)
-
             imageFrame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            
-            # Drone'un durumu ve pozisyonu için abonelikler
-            bittimi = rospy.Subscriber('/drone1/bitti', String, bitti)
 
+            # Drone'un koordinatlarını kaydet
+            if len(koordinatlar) > 0:
+                last_coordinates = koordinatlar[-1]
+                rospy.loginfo("Detected at coordinates: x={}, y={}, z={}".format(last_coordinates[0], last_coordinates[1], last_coordinates[2]))
+            
             return imageFrame
-        
+
     return frame
 
 def main():
     rospy.init_node('image_listener', anonymous=True)
     rospy.Subscriber("/webcam1/image_raw", Image, image_callback_1)
     pose_sub = rospy.Subscriber('/drone1/mavros/local_position/pose', PoseStamped, pose_callback)
+    rospy.Subscriber('/drone1/bitti', String, bitti)
 
     # Create a separate thread to process OpenCV windows
     threading.Thread(target=process_images).start()
