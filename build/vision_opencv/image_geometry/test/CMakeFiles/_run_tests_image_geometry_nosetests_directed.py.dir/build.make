@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_nosetests_directed.py.dir/progress.make
 
 vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_nosetests_directed.py:
-	cd /home/bal/catkin_ws/build/vision_opencv/image_geometry/test && ../../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/image_geometry/nosetests-directed.py.xml "\"/usr/bin/cmake\" -E make_directory /home/bal/catkin_ws/build/test_results/image_geometry" "/usr/bin/nosetests-2.7 -P --process-timeout=60 /home/bal/catkin_ws/src/vision_opencv/image_geometry/test/directed.py --with-xunit --xunit-file=/home/bal/catkin_ws/build/test_results/image_geometry/nosetests-directed.py.xml"
+	cd /home/bal/catkin_ws/build/vision_opencv/image_geometry/test && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/image_geometry/nosetests-directed.py.xml "\"/usr/bin/cmake\" -E make_directory /home/bal/catkin_ws/build/test_results/image_geometry" "/usr/bin/nosetests-2.7 -P --process-timeout=60 /home/bal/catkin_ws/src/vision_opencv/image_geometry/test/directed.py --with-xunit --xunit-file=/home/bal/catkin_ws/build/test_results/image_geometry/nosetests-directed.py.xml"
 
 _run_tests_image_geometry_nosetests_directed.py: vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_nosetests_directed.py
 _run_tests_image_geometry_nosetests_directed.py: vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_nosetests_directed.py.dir/build.make

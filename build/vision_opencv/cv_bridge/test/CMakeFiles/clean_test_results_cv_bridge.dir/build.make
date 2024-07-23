@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include vision_opencv/cv_bridge/test/CMakeFiles/clean_test_results_cv_bridge.dir/progress.make
 
 vision_opencv/cv_bridge/test/CMakeFiles/clean_test_results_cv_bridge:
-	cd /home/bal/catkin_ws/build/vision_opencv/cv_bridge/test && /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/cv_bridge
+	cd /home/bal/catkin_ws/build/vision_opencv/cv_bridge/test && /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/cv_bridge
 
 clean_test_results_cv_bridge: vision_opencv/cv_bridge/test/CMakeFiles/clean_test_results_cv_bridge
 clean_test_results_cv_bridge: vision_opencv/cv_bridge/test/CMakeFiles/clean_test_results_cv_bridge.dir/build.make

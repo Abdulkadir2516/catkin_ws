@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_gtest_image_geometry-utest.dir/progress.make
 
 vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_gtest_image_geometry-utest:
-	cd /home/bal/catkin_ws/build/vision_opencv/image_geometry/test && ../../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/image_geometry/gtest-image_geometry-utest.xml "/home/bal/catkin_ws/devel/lib/image_geometry/image_geometry-utest --gtest_output=xml:/home/bal/catkin_ws/build/test_results/image_geometry/gtest-image_geometry-utest.xml"
+	cd /home/bal/catkin_ws/build/vision_opencv/image_geometry/test && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/image_geometry/gtest-image_geometry-utest.xml "/home/bal/catkin_ws/devel/lib/image_geometry/image_geometry-utest --gtest_output=xml:/home/bal/catkin_ws/build/test_results/image_geometry/gtest-image_geometry-utest.xml"
 
 _run_tests_image_geometry_gtest_image_geometry-utest: vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_gtest_image_geometry-utest
 _run_tests_image_geometry_gtest_image_geometry-utest: vision_opencv/image_geometry/test/CMakeFiles/_run_tests_image_geometry_gtest_image_geometry-utest.dir/build.make

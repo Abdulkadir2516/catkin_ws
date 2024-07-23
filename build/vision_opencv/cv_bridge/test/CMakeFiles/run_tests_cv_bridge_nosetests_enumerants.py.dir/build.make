@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include vision_opencv/cv_bridge/test/CMakeFiles/run_tests_cv_bridge_nosetests_enumerants.py.dir/progress.make
 
 vision_opencv/cv_bridge/test/CMakeFiles/run_tests_cv_bridge_nosetests_enumerants.py:
-	cd /home/bal/catkin_ws/build/vision_opencv/cv_bridge/test && ../../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/cv_bridge/nosetests-enumerants.py.xml "\"/usr/bin/cmake\" -E make_directory /home/bal/catkin_ws/build/test_results/cv_bridge" "/usr/bin/nosetests-2.7 -P --process-timeout=60 /home/bal/catkin_ws/src/vision_opencv/cv_bridge/test/enumerants.py --with-xunit --xunit-file=/home/bal/catkin_ws/build/test_results/cv_bridge/nosetests-enumerants.py.xml"
+	cd /home/bal/catkin_ws/build/vision_opencv/cv_bridge/test && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/cv_bridge/nosetests-enumerants.py.xml "\"/usr/bin/cmake\" -E make_directory /home/bal/catkin_ws/build/test_results/cv_bridge" "/usr/bin/nosetests-2.7 -P --process-timeout=60 /home/bal/catkin_ws/src/vision_opencv/cv_bridge/test/enumerants.py --with-xunit --xunit-file=/home/bal/catkin_ws/build/test_results/cv_bridge/nosetests-enumerants.py.xml"
 
 run_tests_cv_bridge_nosetests_enumerants.py: vision_opencv/cv_bridge/test/CMakeFiles/run_tests_cv_bridge_nosetests_enumerants.py
 run_tests_cv_bridge_nosetests_enumerants.py: vision_opencv/cv_bridge/test/CMakeFiles/run_tests_cv_bridge_nosetests_enumerants.py.dir/build.make

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cv_bridge_boost.dir/module.cpp.o"
   "CMakeFiles/cv_bridge_boost.dir/module_opencv3.cpp.o"
-  "/home/bal/catkin_ws/devel/lib/python2.7/dist-packages/cv_bridge/boost/cv_bridge_boost.pdb"
-  "/home/bal/catkin_ws/devel/lib/python2.7/dist-packages/cv_bridge/boost/cv_bridge_boost.so"
+  "/home/bal/catkin_ws/devel/lib/python3/dist-packages/cv_bridge/boost/cv_bridge_boost.pdb"
+  "/home/bal/catkin_ws/devel/lib/python3/dist-packages/cv_bridge/boost/cv_bridge_boost.so"
 )
 
 # Per-language clean rules from dependency scanning.
