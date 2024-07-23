@@ -1,12 +1,14 @@
-import random
+from cali_tarama_tekli import DroneNavigator
+import time
+nesne = DroneNavigator()
 
-# Metin belgesini oluşturma ve içine "Hello World" yazma
-with open('hello_world.txt', 'w') as file:
-    file.write('Hello World')
+class miras(DroneNavigator):
 
-print("Metin belgesi oluşturuldu ve 'Hello World' yazıldı.")
+    def __init__(self):
+        super().__init__()
+        print(self.tarama_durumu)
 
-sayac = 0
+print(miras().get_tarama())
 
 bush_names =["bush_0","bush_1","bush_2","bush_3","bush_4","bush_5","bush_6"] 
 exit()

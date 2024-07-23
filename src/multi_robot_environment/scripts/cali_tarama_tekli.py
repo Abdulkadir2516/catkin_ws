@@ -17,6 +17,9 @@ class DroneNavigator:
 
     def __init__(self):
         rospy.init_node('drone_navigator')
+                        
+        self.tarama_durumu = False
+
 
         # Drone'un durumu ve pozisyonu için abonelikler
         self.state_sub = rospy.Subscriber('/drone1/mavros/state', State, self.state_callback)
@@ -64,15 +67,10 @@ class DroneNavigator:
                     self.waypoint_index += 1
             else:
                 rospy.loginfo("All waypoints reached")
-                pub = rospy.Publisher('/drone1/bitti', String, queue_size=10)
-                rospy.loginfo("bitti")
-                pub.publish("bitti")
+                break
 
-                
-                
-                
+        self.rate.sleep()
 
-            self.rate.sleep()
                 
     
 if __name__ == '__main__':
