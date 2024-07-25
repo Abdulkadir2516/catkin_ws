@@ -4,21 +4,31 @@ import rospy
 from mavros_msgs.msg import PositionTarget
 from geometry_msgs.msg import PoseStamped
 import time
+from std_msgs.msg import String
 
 class DroneScan:
     def __init__(self):
         rospy.init_node('drone_scan', anonymous=True)
         self.waypoint_pub = rospy.Publisher('/drone1/mavros/setpoint_raw/local', PositionTarget, queue_size=10)
+        self.finish_pub = rospy.Publisher('/drone_scan/finish', String, queue_size=10)
+
         self.rate = rospy.Rate(10)  # 10 Hz
         self.waypoints = [
-            (-30, 30, 7),
-            (-30, 100, 7),
-            (-40, 100, 7),
-            (-40, 30, 7),
-            (-50, 30, 7)
+            (-30, 30, 10),
+            (-30, 90, 10),
+            (-40, 90, 10),
+            (-40, 30, 10),
+            (-50, 30, 10),
+            (-50, 90, 10),
+            (-60, 90, 10),
+            (-60, 30, 10),
+            (-70, 30, 10),
+            (-70, 90, 10),
+            (-80, 90, 10),
+            (-80, 30, 10),
+            (-90, 30, 10),
+            (-90, 90, 10)
         ]
-
-   
 
     def set_waypoint(self, x, y, z):
         waypoint = PositionTarget()
@@ -42,9 +52,15 @@ class DroneScan:
             rospy.loginfo("Waypoint %s reached", waypoint)
             time.sleep(20)  # Give some time to reach the waypoint
 
+        # Tarama işlemi bittiğinde "finish" mesajı yayınla
+        self.finish_pub.publish("finish")
+        rospy.loginfo("Scan finished, finish message published.")
+        #rospy.signal_shutdown("Scan finished")
+
 if __name__ == '__main__':
     try:
         drone_scan = DroneScan()
+        rospy.sleep(2)  # Allow some time to receive the initial pose data
         drone_scan.run()
     except rospy.ROSInterruptException:
         pass

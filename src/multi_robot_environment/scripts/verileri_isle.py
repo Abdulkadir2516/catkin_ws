@@ -1,37 +1,44 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
+import pandas as pd
 
-import rospy
-import csv
-from geometry_msgs.msg import PoseStamped
+# Örnek veriyi bir CSV dosyasından okuyalım
+df = pd.read_csv('~/drone_positions.csv')
 
-# CSV dosyasını oluşturun ve başlıkları yazın
-csv_file = open('pose_data.csv', mode='w')
-csv_writer = csv.writer(csv_file)
-csv_writer.writerow(['timestamp', 'position_x', 'position_y', 'position_z', 'orientation_x', 'orientation_y', 'orientation_z', 'orientation_w'])
+# Yeni sütunlar oluşturmak için listeler
+average_y = []
+x_values = []
 
-def callback(data):
-    # Mesaj verilerini al
-    timestamp = data.header.stamp.to_sec()
-    position = data.pose.position
-    orientation = data.pose.orientation
-    
-    print(data)
-    # Verileri CSV dosyasına yaz
-    csv_writer.writerow([timestamp, position.x, position.y, position.z, orientation.x, orientation.y, orientation.z, orientation.w])
+# Başlangıç değerleri
+previous_y = df['y'].iloc[0]
+previous_x = df['x'].iloc[0]
+temp_values_y = [previous_y]
+temp_values_x = [previous_x]
 
-def listener():
-    # ROS düğümünü başlat
-    rospy.init_node('pose_listener', anonymous=True)
-    
-    # PoseStamped mesajlarına abone ol
-    rospy.Subscriber('/cali_konumlari', PoseStamped, callback)
-    
-    # Düğüm kapanırken CSV dosyasını kapat
-    rospy.on_shutdown(lambda: csv_file.close())
+# y değerlerinin arasındaki farkı kontrol ederek ortalama hesaplayalım ve x değerlerini ekleyelim
+for x, y in zip(df['x'].iloc[1:], df['y'].iloc[1:]):
+    if abs(y - previous_y) < 1.2:
+        temp_values_y.append(y)
+        temp_values_x.append(x)
+    else:
+        if temp_values_y:
+            average_y.append(sum(temp_values_y) / len(temp_values_y))
+            x_values.append(temp_values_x[0])  # İlk x değerini ekle
+            temp_values_y = [y]
+            temp_values_x = [x]
+        else:
+            average_y.append(y)
+            x_values.append(x)
+    previous_y = y
 
-    # Düğümün çalışmasını sağla
-    rospy.spin()
+# Son grubu da ekleyelim
+if temp_values_y:
+    average_y.append(sum(temp_values_y) / len(temp_values_y))
+    x_values.append(temp_values_x[0])
 
-if __name__ == '__main__':
-    listener()
+# Ortalamaları ve x değerlerini yeni sütunlar olarak ekleyelim
+df['x_values'] = pd.Series(x_values)
+df['average_y'] = pd.Series(average_y)
+
+# Sonucu yeni bir CSV dosyasına kaydedelim
+df.to_csv('./processed_data.csv', index=False)
+
+#import ace_tools as tools; tools.display_dataframe_to_user(name="Processed Data", dataframe=df)
