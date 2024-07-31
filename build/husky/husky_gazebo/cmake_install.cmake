@@ -53,16 +53,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_gazebo" TYPE DIRECTORY FILES "/home/bal/catkin_ws/src/husky/husky_gazebo/worlds")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_gazebo/launch" TYPE FILE FILES
-    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch/empty_world.launch"
-    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch/husky_playpen.launch"
-    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch/playpen.launch"
-    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch/realsense.launch"
-    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch/spawn_husky.launch"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_gazebo" TYPE DIRECTORY FILES
+    "/home/bal/catkin_ws/src/husky/husky_gazebo/launch"
+    "/home/bal/catkin_ws/src/husky/husky_gazebo/worlds"
     )
 endif()
 

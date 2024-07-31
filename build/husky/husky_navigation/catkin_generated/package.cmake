@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "husky_navigation")
-set(husky_navigation_VERSION "0.6.10")
+set(husky_navigation_VERSION "0.4.13")
 set(husky_navigation_MAINTAINER "Tony Baltovski <tbaltovski@clearpathrobotics.com>")
 set(husky_navigation_PACKAGE_FORMAT "1")
 set(husky_navigation_BUILD_DEPENDS "roslaunch")

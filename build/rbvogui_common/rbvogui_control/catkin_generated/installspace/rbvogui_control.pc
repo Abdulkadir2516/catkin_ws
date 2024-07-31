@@ -1,0 +1,8 @@
+prefix=/home/bal/catkin_ws/install
+
+Name: rbvogui_control
+Description: Description of rbvogui_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

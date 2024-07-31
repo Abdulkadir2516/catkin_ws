@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_navigation/CMakeFiles/clean_test_results_husky_navigation.dir/progress.make
 
 husky/husky_navigation/CMakeFiles/clean_test_results_husky_navigation:
-	cd /home/bal/catkin_ws/build/husky/husky_navigation && /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_navigation
+	cd /home/bal/catkin_ws/build/husky/husky_navigation && /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_navigation
 
 clean_test_results_husky_navigation: husky/husky_navigation/CMakeFiles/clean_test_results_husky_navigation
 clean_test_results_husky_navigation: husky/husky_navigation/CMakeFiles/clean_test_results_husky_navigation.dir/build.make

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/progress.make
 
 husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo:
-	cd /home/bal/catkin_ws/build/husky/husky_gazebo && /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_gazebo
+	cd /home/bal/catkin_ws/build/husky/husky_gazebo && /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_gazebo
 
 clean_test_results_husky_gazebo: husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo
 clean_test_results_husky_gazebo: husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build.make

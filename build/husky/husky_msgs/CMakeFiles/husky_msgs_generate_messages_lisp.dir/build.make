@@ -60,7 +60,7 @@ husky/husky_msgs/CMakeFiles/husky_msgs_generate_messages_lisp: /home/bal/catkin_
 /home/bal/catkin_ws/devel/share/common-lisp/ros/husky_msgs/msg/HuskyStatus.lisp: /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg
 /home/bal/catkin_ws/devel/share/common-lisp/ros/husky_msgs/msg/HuskyStatus.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bal/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from husky_msgs/HuskyStatus.msg"
-	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg -Ihusky_msgs:/home/bal/catkin_ws/src/husky/husky_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p husky_msgs -o /home/bal/catkin_ws/devel/share/common-lisp/ros/husky_msgs/msg
+	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg -Ihusky_msgs:/home/bal/catkin_ws/src/husky/husky_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p husky_msgs -o /home/bal/catkin_ws/devel/share/common-lisp/ros/husky_msgs/msg
 
 husky_msgs_generate_messages_lisp: husky/husky_msgs/CMakeFiles/husky_msgs_generate_messages_lisp
 husky_msgs_generate_messages_lisp: /home/bal/catkin_ws/devel/share/common-lisp/ros/husky_msgs/msg/HuskyStatus.lisp

@@ -10,10 +10,10 @@ def move_square():
     vel_msg = Twist()
 
     # Kare çizmek için ayarlar
-    speed = 0.2  # m/s
-    distance = 1.0  # metre
+    speed = 10  # m/s
+    distance = 50  # metre
     angle = 90  # derece
-    angular_speed = 0.2  # rad/s
+    angular_speed = 1  # rad/s
 
     for _ in range(4):
         # İleri gitme

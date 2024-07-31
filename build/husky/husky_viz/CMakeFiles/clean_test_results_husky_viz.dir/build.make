@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_viz/CMakeFiles/clean_test_results_husky_viz.dir/progress.make
 
 husky/husky_viz/CMakeFiles/clean_test_results_husky_viz:
-	cd /home/bal/catkin_ws/build/husky/husky_viz && /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_viz
+	cd /home/bal/catkin_ws/build/husky/husky_viz && /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_viz
 
 clean_test_results_husky_viz: husky/husky_viz/CMakeFiles/clean_test_results_husky_viz
 clean_test_results_husky_viz: husky/husky_viz/CMakeFiles/clean_test_results_husky_viz.dir/build.make

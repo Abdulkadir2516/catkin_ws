@@ -1,0 +1,8 @@
+prefix=/home/bal/catkin_ws/install
+
+Name: rbvogui_pad
+Description: Description of rbvogui_pad
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: robotnik_msgs roscpp sensor_msgs geometry_msgs

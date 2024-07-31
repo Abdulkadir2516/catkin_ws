@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="finallecar">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.20864 -0.547261 0.190368"
+        rpy="0 0 0" />
+      <mass
+        value="6.790753001" />
+      <inertia
+        ixx="2.80046448"
+        ixy="-0.44489161"
+        ixz="0.1929147"
+        iyy="1.91257935"
+        iyz="0.11011542"
+        izz="3.91368936" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="-3.5962E-12 -0.01 0.03249"
+        rpy="0 0 0" />
+      <mass
+        value="7.6958" />
+      <inertia
+        ixx="0.068663"
+        ixy="3.9288E-12"
+        ixz="2.0747E-12"
+        iyy="0.068663"
+        iyz="-1.9947E-11"
+        izz="0.11782" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.63137 0.65882 0.67843 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel1joint"
+    type="continuous">
+    <origin
+      xyz="-0.32331 0 -0.41381"
+      rpy="1.5708 0.36709 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel2">
+    <inertial>
+      <origin
+        xyz="-3.62709862145039E-12 -0.0099999997601759 0.0324902111681642"
+        rpy="0 0 0" />
+      <mass
+        value="7.6957661727786" />
+      <inertia
+        ixx="0.0686634565010286"
+        ixy="3.95821569965094E-12"
+        ixz="2.06343394084791E-12"
+        iyy="0.0686634562243053"
+        iyz="-2.02983413731765E-11"
+        izz="0.117819944312768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.631372549019608 0.658823529411765 0.67843137254902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel2joint"
+    type="continuous">
+    <origin
+      xyz="0.55648 0 -0.42337"
+      rpy="1.5708 0.99677 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel3">
+    <inertial>
+      <origin
+        xyz="-3.6269E-12 -0.01 -0.06351"
+        rpy="0 0 0" />
+      <mass
+        value="7.6958" />
+      <inertia
+        ixx="0.068663"
+        ixy="3.958E-12"
+        ixz="2.0846E-12"
+        iyy="0.068663"
+        iyz="-2.0296E-11"
+        izz="0.11782" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.63137 0.65882 0.67843 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel3joint"
+    type="continuous">
+    <origin
+      xyz="-0.33085 -0.963 -0.41396"
+      rpy="1.5708 0.40656 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel4">
+    <inertial>
+      <origin
+        xyz="-3.6325E-12 -0.01 -0.06351"
+        rpy="0 0 0" />
+      <mass
+        value="7.6958" />
+      <inertia
+        ixx="0.068663"
+        ixy="3.9632E-12"
+        ixz="2.083E-12"
+        iyy="0.068663"
+        iyz="-2.0359E-11"
+        izz="0.11782" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.63137 0.65882 0.67843 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://finallecar/meshes/wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel4joint"
+    type="continuous">
+    <origin
+      xyz="0.54408 -0.963 -0.41964"
+      rpy="1.5708 0.41174 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+<gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/finallecar</namespace>
+        <remapping>cmd_vel:=/cmd_vel</remapping>
+        <remapping>odom:=/odom</remapping>
+      </ros>
+      <robotNamespace>/my_robot</robotNamespace>
+      <controlFrequency>50.0</controlFrequency>
+      <wheelSeparation>10</wheelSeparation>
+      <wheelDiameter>2</wheelDiameter>
+      <wheelAcceleration>0.0</wheelAcceleration>
+      <wheelTorque>10000.0</wheelTorque>
+      <commandTopic>/cmd_vel</commandTopic>
+      <odometryTopic>/odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <leftJoint>wheel1joint</leftJoint>
+      <leftJoint>wheel2joint</leftJoint>
+      <rightJoint>wheel3joint</rightJoint>
+      <rightJoint>wheel4joint</rightJoint>
+    </plugin>
+  </gazebo>
+</robot>

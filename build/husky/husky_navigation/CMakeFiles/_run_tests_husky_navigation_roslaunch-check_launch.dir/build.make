@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_navigation/CMakeFiles/_run_tests_husky_navigation_roslaunch-check_launch.dir/progress.make
 
 husky/husky_navigation/CMakeFiles/_run_tests_husky_navigation_roslaunch-check_launch:
-	cd /home/bal/catkin_ws/build/husky/husky_navigation && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/husky_navigation/roslaunch-check_launch.xml "/usr/bin/cmake -E make_directory /home/bal/catkin_ws/build/test_results/husky_navigation" "/opt/ros/melodic/share/roslaunch/cmake/../scripts/roslaunch-check -o \"/home/bal/catkin_ws/build/test_results/husky_navigation/roslaunch-check_launch.xml\" \"/home/bal/catkin_ws/src/husky/husky_navigation/launch\" "
+	cd /home/bal/catkin_ws/build/husky/husky_navigation && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/bal/catkin_ws/build/test_results/husky_navigation/roslaunch-check_launch.xml "/usr/bin/cmake -E make_directory /home/bal/catkin_ws/build/test_results/husky_navigation" "/opt/ros/melodic/share/roslaunch/cmake/../scripts/roslaunch-check -o \"/home/bal/catkin_ws/build/test_results/husky_navigation/roslaunch-check_launch.xml\" \"/home/bal/catkin_ws/src/husky/husky_navigation/launch\" "
 
 _run_tests_husky_navigation_roslaunch-check_launch: husky/husky_navigation/CMakeFiles/_run_tests_husky_navigation_roslaunch-check_launch
 _run_tests_husky_navigation_roslaunch-check_launch: husky/husky_navigation/CMakeFiles/_run_tests_husky_navigation_roslaunch-check_launch.dir/build.make

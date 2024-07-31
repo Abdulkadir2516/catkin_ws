@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -91,27 +79,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -134,6 +101,39 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,109 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
+husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
 
 # Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
+clean_test_results_husky_gazebo: husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
 
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch
+.PHONY : clean_test_results_husky_gazebo
 
 # fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
-
-# Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
-
-.PHONY : _run_tests_husky_gazebo_roslaunch-check
-
-# fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
-
-.PHONY : run_tests_husky_gazebo
-
-# fast build rule for target.
-run_tests_husky_gazebo/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build
-.PHONY : run_tests_husky_gazebo/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check/fast
+clean_test_results_husky_gazebo/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build.make husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build
+.PHONY : clean_test_results_husky_gazebo/fast
 
 # Convenience name for target.
 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo.dir/rule:
@@ -288,109 +198,79 @@ _run_tests_husky_gazebo/fast:
 .PHONY : _run_tests_husky_gazebo/fast
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
+husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
 
 # Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/rule
+run_tests_husky_gazebo_roslaunch-check: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/rule
 
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch
+.PHONY : run_tests_husky_gazebo_roslaunch-check
 
 # fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch/fast
+run_tests_husky_gazebo_roslaunch-check/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build
+.PHONY : run_tests_husky_gazebo_roslaunch-check/fast
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
+husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
 
 # Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
+run_tests_husky_gazebo: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/rule
 
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch
+.PHONY : run_tests_husky_gazebo
 
 # fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch/fast
+run_tests_husky_gazebo/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build
+.PHONY : run_tests_husky_gazebo/fast
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
+husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
 
 # Convenience name for target.
-clean_test_results_husky_gazebo: husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/rule
+_run_tests_husky_gazebo_roslaunch-check: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/rule
 
-.PHONY : clean_test_results_husky_gazebo
+.PHONY : _run_tests_husky_gazebo_roslaunch-check
 
 # fast build rule for target.
-clean_test_results_husky_gazebo/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build.make husky/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build
-.PHONY : clean_test_results_husky_gazebo/fast
+_run_tests_husky_gazebo_roslaunch-check/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build
+.PHONY : _run_tests_husky_gazebo_roslaunch-check/fast
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
+husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
 
 # Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/rule
+run_tests_husky_gazebo_roslaunch-check_launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
 
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch
+.PHONY : run_tests_husky_gazebo_roslaunch-check_launch
 
 # fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch/fast
+run_tests_husky_gazebo_roslaunch-check_launch/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/build
+.PHONY : run_tests_husky_gazebo_roslaunch-check_launch/fast
 
 # Convenience name for target.
-husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
+husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/rule:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
+.PHONY : husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
 
 # Convenience name for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
+_run_tests_husky_gazebo_roslaunch-check_launch: husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/rule
 
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch
+.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch
 
 # fast build rule for target.
-_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/build
-.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch/fast
-
-# Convenience name for target.
-husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
-.PHONY : husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
-
-# Convenience name for target.
-run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch: husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/rule
-
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch
-
-# fast build rule for target.
-run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch/fast:
-	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/build.make husky/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch.dir/build
-.PHONY : run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch/fast
+_run_tests_husky_gazebo_roslaunch-check_launch/fast:
+	cd /home/bal/catkin_ws/build && $(MAKE) -f husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/build.make husky/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/build
+.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch/fast
 
 # Help Target
 help:
@@ -398,28 +278,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch"
-	@echo "... list_install_components"
-	@echo "... run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch"
-	@echo "... run_tests_husky_gazebo_roslaunch-check_launch_husky_playpen.launch"
-	@echo "... run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check"
-	@echo "... run_tests_husky_gazebo"
-	@echo "... run_tests_husky_gazebo_roslaunch-check"
-	@echo "... _run_tests_husky_gazebo"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch_empty_world.launch"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch"
-	@echo "... clean_test_results_husky_gazebo"
 	@echo "... install/local"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch_playpen.launch"
-	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch"
-	@echo "... run_tests_husky_gazebo_roslaunch-check_launch_realsense.launch"
-	@echo "... run_tests_husky_gazebo_roslaunch-check_launch_spawn_husky.launch"
 	@echo "... test"
+	@echo "... clean_test_results_husky_gazebo"
+	@echo "... _run_tests_husky_gazebo"
+	@echo "... run_tests_husky_gazebo_roslaunch-check"
+	@echo "... run_tests_husky_gazebo"
+	@echo "... install/strip"
+	@echo "... _run_tests_husky_gazebo_roslaunch-check"
+	@echo "... edit_cache"
+	@echo "... run_tests_husky_gazebo_roslaunch-check_launch"
+	@echo "... list_install_components"
+	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch"
 .PHONY : help
 
 

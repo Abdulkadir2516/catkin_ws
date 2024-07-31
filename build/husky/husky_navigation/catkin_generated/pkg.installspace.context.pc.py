@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "husky_navigation"
 PROJECT_SPACE_DIR = "/home/bal/catkin_ws/install"
-PROJECT_VERSION = "0.6.10"
+PROJECT_VERSION = "0.4.13"

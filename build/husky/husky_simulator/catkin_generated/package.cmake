@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "husky_simulator")
-set(husky_simulator_VERSION "0.6.10")
+set(husky_simulator_VERSION "0.4.13")
 set(husky_simulator_MAINTAINER "Tony Baltovski <tbaltovski@clearpathrobotics.com>")
 set(husky_simulator_PACKAGE_FORMAT "1")
 set(husky_simulator_BUILD_DEPENDS )

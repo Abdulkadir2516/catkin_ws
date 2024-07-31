@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_control/CMakeFiles/clean_test_results_husky_control.dir/progress.make
 
 husky/husky_control/CMakeFiles/clean_test_results_husky_control:
-	cd /home/bal/catkin_ws/build/husky/husky_control && /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_control
+	cd /home/bal/catkin_ws/build/husky/husky_control && /usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/bal/catkin_ws/build/test_results/husky_control
 
 clean_test_results_husky_control: husky/husky_control/CMakeFiles/clean_test_results_husky_control
 clean_test_results_husky_control: husky/husky_control/CMakeFiles/clean_test_results_husky_control.dir/build.make

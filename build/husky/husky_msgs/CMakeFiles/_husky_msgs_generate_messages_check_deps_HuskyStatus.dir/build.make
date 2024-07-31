@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bal/catkin_ws/build
 include husky/husky_msgs/CMakeFiles/_husky_msgs_generate_messages_check_deps_HuskyStatus.dir/progress.make
 
 husky/husky_msgs/CMakeFiles/_husky_msgs_generate_messages_check_deps_HuskyStatus:
-	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py husky_msgs /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg std_msgs/Header
+	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py husky_msgs /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg std_msgs/Header
 
 _husky_msgs_generate_messages_check_deps_HuskyStatus: husky/husky_msgs/CMakeFiles/_husky_msgs_generate_messages_check_deps_HuskyStatus
 _husky_msgs_generate_messages_check_deps_HuskyStatus: husky/husky_msgs/CMakeFiles/_husky_msgs_generate_messages_check_deps_HuskyStatus.dir/build.make

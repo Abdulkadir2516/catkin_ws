@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "husky_desktop")
-set(husky_desktop_VERSION "0.6.10")
+set(husky_desktop_VERSION "0.4.13")
 set(husky_desktop_MAINTAINER "Tony Baltovski <tbaltovski@clearpathrobotics.com>")
 set(husky_desktop_PACKAGE_FORMAT "1")
 set(husky_desktop_BUILD_DEPENDS )

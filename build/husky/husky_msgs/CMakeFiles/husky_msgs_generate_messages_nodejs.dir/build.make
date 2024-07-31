@@ -60,7 +60,7 @@ husky/husky_msgs/CMakeFiles/husky_msgs_generate_messages_nodejs: /home/bal/catki
 /home/bal/catkin_ws/devel/share/gennodejs/ros/husky_msgs/msg/HuskyStatus.js: /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg
 /home/bal/catkin_ws/devel/share/gennodejs/ros/husky_msgs/msg/HuskyStatus.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bal/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from husky_msgs/HuskyStatus.msg"
-	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg -Ihusky_msgs:/home/bal/catkin_ws/src/husky/husky_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p husky_msgs -o /home/bal/catkin_ws/devel/share/gennodejs/ros/husky_msgs/msg
+	cd /home/bal/catkin_ws/build/husky/husky_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/bal/catkin_ws/src/husky/husky_msgs/msg/HuskyStatus.msg -Ihusky_msgs:/home/bal/catkin_ws/src/husky/husky_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p husky_msgs -o /home/bal/catkin_ws/devel/share/gennodejs/ros/husky_msgs/msg
 
 husky_msgs_generate_messages_nodejs: husky/husky_msgs/CMakeFiles/husky_msgs_generate_messages_nodejs
 husky_msgs_generate_messages_nodejs: /home/bal/catkin_ws/devel/share/gennodejs/ros/husky_msgs/msg/HuskyStatus.js
